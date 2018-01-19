@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="main-page">
+        <div class="main-text">
+            {#  <p>Hello {{ user.username }}!</p>#}
+            <br>
+            <div class="posts">
+                <div class="images">
+                    <a href="{% url 'sign' %}">
+                    <img class="icon" src="{% static 'style/images/sign/1.png' %}">
+                    </a>
+                    <h3>Предупреждающие знаки</h3>
+                    <a href="{% url 'sign1' %}">
+                    <img class="icon" src="{% static 'style/images/sign/12.png' %}">
+                    </a>
+                    <h3>   Знаки приоритета</h3>
+                    <a href="{% url 'sign2' %}">
+                    <img class="icon" src="{% static 'style/images/sign/13.png' %}">
+                    </a>
+                    <h3>   Запрещающие знаки</h3>
+                    <a href="{% url 'sign3' %}">
+                    <img class="icon" src="{% static 'style/images/sign/15.png' %}">
+                    </a>
+                    <h3>Предписывающие знаки</h3>
+                    <a href="{% url 'sign4' %}">
+                    <img class="icon" src="{% static 'style/images/sign/1.5.jpg' %}">
+                    </a>
+                    <h3>Знаки особых предписаний</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

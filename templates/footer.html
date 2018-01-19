@@ -1,0 +1,34 @@
+{% load static %}
+<style>
+    .phone-number{
+        margin-top: 20px;
+    }
+</style>
+<footer id="myFooter" style="z-index: -1">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="{% static 'style/images/logo.png' %}" style="width: 180px">
+            </div>
+            <div class="col-sm-2">
+                <h5>Начать</h5>
+                <ul>
+                    <li><a href="/">Главная страница</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h5>О нас</h5>
+                <ul>
+                    <li><a href="company/company">Информация о компании</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-default">Cвяжитесь с нами</button>
+                <p class="phone-number">          +7 123456789</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2018 Авторское право</p>
+    </div>
+</footer>

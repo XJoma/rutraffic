@@ -1,0 +1,1 @@
+web: gunicorn rutraffic.wsgi --log-file -

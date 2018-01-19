@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="main-page">
+        <div class="main-text">
+            <img class="sign-icon" src="{{ post.image.url }}" style="width: 120px">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text }}</p>
+            <hr><hr>
+            <p>{{ post.fulltext|linebreaksbr }}</p>
+            <img src="{{ post.timage.url }}" style="width: 400px">
+            <hr>
+        </div>
+    </div>
+{% endblock %}

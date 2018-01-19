@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="main-page">
+    <div class="main-text">
+    {#  <p>Hello {{ user.username }}!</p>#}
+    <br>
+    <div class="posts">
+        {% for fee in fees %}
+            <img class="sign-icon" src="{{ fee.image.url }}" style="width: 300px">
+                <h1>{{ fee.title }}</h1>
+            <p>{{ fee.text|linebreaksbr }}</p>
+            <blockquote>
+                <i>{{ fee.user }}</i><br>
+                <i>{{ fee.created }}</i>
+            </blockquote>
+            <hr>
+            <hr>
+            <hr>
+        {% endfor %}
+    </div>
+    </div>
+    </div>
+{% endblock %}

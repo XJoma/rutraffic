@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="main-page">
+    <div class="main-text">
+    {#  <p>Hello {{ user.username }}!</p>#}
+    <br>
+    <div class="posts">
+        {% for post3 in posts %}
+            <a href="{% url 'post_single3' id=post3.id %}">
+            <img class="sign-icon" src="{{ post3.image.url }}" style="width: 120px">
+                <h1>{{ post3.title }}</h1>
+            </a>
+            <p>{{ post3.text|linebreaksbr }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+    </div>
+    </div>
+{% endblock %}

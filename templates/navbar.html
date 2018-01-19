@@ -1,0 +1,124 @@
+{% load static %}
+<style>
+    body {
+        margin: 0;
+    }
+
+    #navbar {
+        overflow: hidden;
+        background-color: #333;
+        height: 52px;
+        width: 95%;
+        border-radius: 0 50px 50px 0;
+        padding-right: 100px;
+    }
+
+    #navbar .menu {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    #navbar .menu:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    #navbar .active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%
+    }
+
+    .sticky + .content {
+        padding-top: 60px;
+    }
+
+    .slide {
+        width: 100%;
+        position: relative;
+    }
+
+    .nav-icon {
+        height: 45px;
+        float: right;
+        margin-top: 4px;
+        margin-left: 20px;
+    }
+
+    .on-slide {
+        position: absolute;
+        top: 5%;
+        left: 1%;
+        width: 80%;
+    }
+
+    .on-slide3 {
+        position: absolute;
+        width: 10%;
+        top: 5%;
+        right: 5%;
+    }
+
+    .main-login-button {
+        margin-left: 100px;
+    }
+</style>
+
+<img class="slide" src="{% static 'style/images/1.png' %}">
+<img class="on-slide3" src="{% static 'style/images/light.gif' %}">
+<img class="on-slide" src="{% static 'style/images/motto.png' %}">
+
+<div id="navbar">
+    <a class="menu active" href="/">Главная</a>
+    <a class="menu" href="{% url 'mainsign' %}">Знаки</a>
+    <a class="menu" href="{% url 'fee' %}">Штрафы</a>
+    <a class="menu" href="{% url 'company' %}">О нас</a>
+{#    <a class="menu" href="">Штрафы</a>#}
+{#    <a class="menu" href="">О нас</a>#}
+    <a href="{% url 'sign' %}">
+        <img class="nav-icon" src="{% static "style/images/sign/1.png" %}">
+    </a>
+    <a href="{% url 'sign1' %}">
+        <img class="nav-icon" src="{% static 'style/images/sign/12.png' %}">
+    </a>
+    <a href="{% url 'sign2' %}">
+        <img class="nav-icon" src="{% static 'style/images/sign/13.png' %}">
+    </a>
+    <a href="{% url 'sign3' %}">
+        <img class="nav-icon" src="{% static 'style/images/sign/15.png' %}">
+    </a>
+    <a href="{% url 'sign4' %}">
+        <img class="nav-icon" src="{% static 'style/images/sign/1.5.jpg' %}">
+    </a>
+</div>
+
+<script>
+    window.onscroll = function () {
+        myFunction()
+    };
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>

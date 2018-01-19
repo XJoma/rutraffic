@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .ctext {
+            text-align: center;
+            color: darkred;
+        }
+
+        .clogo {
+            margin-left: 200px;
+        }
+
+        iframe {
+            margin-left: 50%;
+            transform: translate(-50%);
+        }
+    </style>
+    <div class="main-page">
+        <h1 class="ctext">Быть в безопасности соблюдать знаки</h1>
+        {#        <img src="{% static 'style/images/car.gif' %}">#}
+        <img class="clogo" src="{% static 'style/images/clogo.png' %}" style="width: 60%">
+        <div class="main-text">
+            <div class="posts">
+                {% for company in companys %}
+                    <img class="sign-icon" src="{{ company.image.url }}" style="width: 300px">
+                    <h1>{{ company.title }}</h1>
+                    <p>{{ company.text|linebreaksbr }}</p>
+                    <hr>
+                    <hr>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+        <h1 style="text-align: center">Наша компания расположена</h1>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12555.167690891789!2d37.61278861472786!3d55.754150889891484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x58f2a2cfba777fda!2z0J_QsNGA0YLQtdGALtGA0YMgLyBQYXJ0ZXIucnU!5e0!3m2!1sen!2skg!4v1515511065473"
+                width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+{% endblock %}
